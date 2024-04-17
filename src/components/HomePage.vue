@@ -12,7 +12,7 @@ const getEvents = () =>{
     return rawData.json();
   })
   .then((data) => {
-    // Accessing events inside the nested structure
+    // Tilgå events inden i en Nested Structure
     events.value = Object.values(data)[0].events;
     console.log(events.value);
   })
