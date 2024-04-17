@@ -1,0 +1,181 @@
+:root {
+    color-scheme: dark light;
+    font-family: system-ui;
+  }
+
+  .frontpage {
+    background-image: url("../assets/images/header.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+  
+    @media (max-width: 768px) { // Tablet adjustments
+      justify-content: flex-start;
+      padding-top: 20vh; // Adjust based on header image and desired look
+    }
+  
+    @media (max-width: 480px) { // Mobile adjustments
+      padding-top: 15vh; // Adjust as needed for smaller devices
+    }
+  }
+  
+  .welcome-message {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vh; // This likely should be adjusted as it sets width based on viewport height, which might not be intended
+    padding: 20px; // Add padding for better text readability
+  
+    @media (max-width: 768px) {
+      width: 80%; // Use percentage-based widths for better responsiveness
+    }
+  
+    @media (max-width: 480px) {
+      width: 95%; // Almost full width on very small screens
+    }
+  }
+  
+  .cta {
+    margin-top: 20px;
+    padding-bottom: 4%;
+  
+    @media (max-width: 768px) {
+      padding-bottom: 8%; // Increase padding for better spacing on tablets
+    }
+  
+    @media (max-width: 480px) {
+      padding-bottom: 10%; // Even more padding for mobile devices
+    }
+  }
+  
+  .ctaknap {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FFF;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #fff6f0;
+    }
+  
+    @media (max-width: 768px) {
+      font-size: 14px; // Slightly smaller font size on tablets
+      padding: 8px 18px; // Adjust padding for smaller screens
+    }
+  
+    @media (max-width: 480px) {
+      font-size: 12px; // Even smaller font size for mobile
+      padding: 6px 16px; // Reduce padding for mobile to save space
+    }
+  }
+  
+
+  
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .newevent {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  
+    .newimg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  
+    .text-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.2);
+  
+      h3, p {
+        margin: 0;
+        padding: 10px;
+      }
+    }
+  }
+  
+  .deltager {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+        
+    .buttonja, .buttonnej {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 5px;
+        width:10vh;
+    }
+
+        .buttonja {
+            background-color: #00f508;
+            color: #FFF;
+        }
+        
+        .buttonnej {
+            background-color: #f50000;
+            color: #FFF;
+        }
+
+  }
+
+  
+  
+  // Media Queries for Responsiveness
+  @media (max-width: 768px) { // Tablets
+    ul {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 15px;
+    }
+  
+    .text-overlay h3, .text-overlay p {
+      font-size: 0.9rem; // Adjust font size for tablet devices
+    }
+  }
+  
+  @media (max-width: 480px) { // Mobile devices
+    ul {
+      grid-template-columns: 1fr; // Single column layout on mobile
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .text-overlay {
+      background-color: rgba(0, 0, 0, 0.5); // More opacity for better readability on small screens
+  
+      h3, p {
+        padding: 5px; // Less padding to fit smaller screens
+        font-size: 0.8rem; // Smaller font size for mobile devices
+      }
+    }
+  }
