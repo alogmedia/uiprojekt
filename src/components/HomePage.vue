@@ -44,7 +44,7 @@ const attendEvent = async (eventId) => {
         const event = eventsData[eventIndex];
         event.deltager += 1;
         
-        const updatedEventsData = [...eventsData];
+        const updatedEventsData = [...eventsData]; /* Spread Operator - alle elementer fra det eksisterende array eventsData og "sprede" dem ud som individuelle elementer i et nyt array.*/
         updatedEventsData[eventIndex] = event;
 
         await fetch('https://ui-projekt-default-rtdb.europe-west1.firebasedatabase.app/events/-Nucr-C5ANJidfw12Nba.json', {
