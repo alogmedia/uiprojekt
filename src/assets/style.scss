@@ -3,6 +3,9 @@
     font-family: system-ui;
   }
 
+$ani-speed: 2s;
+$ani-delay: 1s;
+
   .frontpage {
     background-image: url("../assets/images/header.jpg");
     display: flex;
@@ -12,41 +15,95 @@
     height: 100vh;
     background-size: cover;
   
-    @media (max-width: 768px) { // Tablet adjustments
+    @media (max-width: 768px) {
       justify-content: flex-start;
-      padding-top: 20vh; // Adjust based on header image and desired look
+      padding-top: 20vh; 
     }
   
-    @media (max-width: 480px) { // Mobile adjustments
-      padding-top: 15vh; // Adjust as needed for smaller devices
+    @media (max-width: 480px) { 
+      padding-top: 15vh; 
     }
   }
   
   .welcome-message {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 100vh; // This likely should be adjusted as it sets width based on viewport height, which might not be intended
-    padding: 20px; // Add padding for better text readability
+    width: 100vh;
+    padding: 20px;
+    color: white;
   
     @media (max-width: 768px) {
-      width: 80%; // Use percentage-based widths for better responsiveness
+      width: 80%; 
     }
   
     @media (max-width: 480px) {
-      width: 95%; // Almost full width on very small screens
+      width: 95%; 
     }
   }
   
+  .arrow {
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow-first {
+    animation: arrow-movement $ani-speed ease-in-out infinite;
+}
+.arrow-second {
+    animation: arrow-movement $ani-speed $ani-delay ease-in-out infinite;
+}
+
+.arrow:before,
+.arrow:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px; 
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 30px;
+}
+
+.arrow:before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+}
+
+.arrow:after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+}
+
+// Animation
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+        top: 45%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
+
+
   .cta {
     margin-top: 20px;
     padding-bottom: 4%;
   
     @media (max-width: 768px) {
-      padding-bottom: 8%; // Increase padding for better spacing on tablets
+      padding-bottom: 8%; 
     }
   
     @media (max-width: 480px) {
-      padding-bottom: 10%; // Even more padding for mobile devices
+      padding-bottom: 10%;
     }
   }
   
@@ -65,13 +122,13 @@
     }
   
     @media (max-width: 768px) {
-      font-size: 14px; // Slightly smaller font size on tablets
-      padding: 8px 18px; // Adjust padding for smaller screens
+      font-size: 14px; 
+      padding: 8px 18px; 
     }
   
     @media (max-width: 480px) {
-      font-size: 12px; // Even smaller font size for mobile
-      padding: 6px 16px; // Reduce padding for mobile to save space
+      font-size: 12px; 
+      padding: 6px 16px;
     }
   }
   
@@ -90,7 +147,11 @@
   .newevent {
     position: relative;
     width: 100%;
+    height: 300px; 
     overflow: hidden;
+    display: flex; 
+    justify-content: center;
+    align-items: stretch; 
   
     .newimg {
       width: 100%;
@@ -137,12 +198,12 @@
     }
 
         .buttonja {
-            background-color: #00f508;
+            background-color: #2ecc71;
             color: #FFF;
         }
         
         .buttonnej {
-            background-color: #f50000;
+            background-color: #e74c3c;
             color: #FFF;
         }
 
@@ -150,7 +211,7 @@
 
   
   
-  // Media Queries for Responsiveness
+  
   @media (max-width: 768px) { // Tablets
     ul {
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -159,23 +220,23 @@
     }
   
     .text-overlay h3, .text-overlay p {
-      font-size: 0.9rem; // Adjust font size for tablet devices
+      font-size: 0.9rem; 
     }
   }
   
-  @media (max-width: 480px) { // Mobile devices
+  @media (max-width: 480px) { // Mobile
     ul {
-      grid-template-columns: 1fr; // Single column layout on mobile
+      grid-template-columns: 1fr; 
       gap: 10px;
       padding: 10px;
     }
   
     .text-overlay {
-      background-color: rgba(0, 0, 0, 0.5); // More opacity for better readability on small screens
+      background-color: rgba(0, 0, 0, 0.5); 
   
       h3, p {
-        padding: 5px; // Less padding to fit smaller screens
-        font-size: 0.8rem; // Smaller font size for mobile devices
+        padding: 5px; 
+        font-size: 0.8rem;
       }
     }
   }

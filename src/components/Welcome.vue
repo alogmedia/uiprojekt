@@ -8,6 +8,8 @@ import HomePage from './HomePage.vue';
       <p>Klik eller swipe op for at se kommende events eller book et af vores mange lokaler</p>
       <div class="cta">
       <button class="ctaknap" @click="scrollToMainSection">Læs Mere</button>
+      <div class="arrow arrow-first"></div>
+      <div class="arrow arrow-second"></div>
     </div>
     </div>
     

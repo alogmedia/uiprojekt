@@ -69,7 +69,6 @@ const noToEvent = async (eventId) => {
         const response = await fetch('https://ui-projekt-default-rtdb.europe-west1.firebasedatabase.app/events.json');
         const data = await response.json();
 
-        // Accessing events from the nested property
         const eventsData = Object.values(data)[0].events;
 
         if (!eventsData || eventsData.length === 0) {
@@ -115,7 +114,7 @@ const noToEvent = async (eventId) => {
               <p>{{ e.date }}</p>
               <div class="deltager">
                 <h4>Deltager?</h4>
-                <button @click="attendEvent(e.id)" class="buttonja">JA</button> <!-- Example for event with id=1 -->
+                <button @click="attendEvent(e.id)" class="buttonja">JA</button>
                 <button @click="noToEvent(e.id)" class="buttonnej">NEJ</button>
               </div>
             </div>
