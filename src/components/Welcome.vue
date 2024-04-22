@@ -1,14 +1,13 @@
 <script setup>
-import HomePage from './HomePage.vue';
+
 </script>
 <template>
   <div class="frontpage">
     <div class="welcome-message">
       <h1>Velkommen til Studenterhuset Odense!</h1>
-      <p>Klik eller swipe op for at se kommende events eller book et af vores mange lokaler</p>
+      <p>Klik eller swipe op for at se kommende events</p>
       <div class="cta">
-      <div class="arrow arrow-first"></div>
-      <div class="arrow arrow-second"></div>
+      <button class="ctaknap" @click="scrollToMainSection">Se Events</button>
     </div>
     </div>
     

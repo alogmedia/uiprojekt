@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 
-const isLoading = ref(true);
 const events = ref([]);
 
 const getEvents = () =>{
@@ -104,8 +103,6 @@ const noToEvent = async (eventId) => {
 
 <template>
   <div id="main-section">
-    <p v-if="isLoading">Loading...</p>
-    <div v-else>
       <ul>
         <li v-for="e in events" :key="e.id">
           <div class="newevent">
@@ -124,6 +121,5 @@ const noToEvent = async (eventId) => {
           
         </li>
       </ul>
-    </div>
   </div>
 </template>

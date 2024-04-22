@@ -1,11 +1,11 @@
 <script setup>
-import HomePage from '@/components/HomePage.vue';
+import Events from '@/components/Events.vue';
 import Welcome from '@/components/Welcome.vue';
 </script>
 
 <template>
   <main>
     <Welcome />
-    <HomePage />
+    <Events />
   </main>
 </template>
