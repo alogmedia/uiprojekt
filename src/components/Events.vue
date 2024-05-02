@@ -15,9 +15,6 @@ const getEvents = () =>{
     events.value = Object.values(data)[0].events;
     console.log(events.value);
   })
-  .finally(() => {
-    isLoading.value = false;
-  });
 };
 
 getEvents();
@@ -43,7 +40,7 @@ const attendEvent = async (eventId) => {
         const event = eventsData[eventIndex];
         event.deltager += 1;
         
-        const updatedEventsData = [...eventsData]; /* Spread Operator - alle elementer fra det eksisterende array eventsData og "sprede" dem ud som individuelle elementer i et nyt array.*/
+        const updatedEventsData = [...eventsData]; /* Spread Operator - alle elementer fra det eksisterende array */
         updatedEventsData[eventIndex] = event;
 
         await fetch('https://ui-projekt-default-rtdb.europe-west1.firebasedatabase.app/events/-Nucr-C5ANJidfw12Nba.json', {

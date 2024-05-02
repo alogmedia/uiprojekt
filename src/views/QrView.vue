@@ -1,13 +1,11 @@
 <script setup>
-import Events from '@/components/Events.vue';
-import Welcome from '@/components/Welcome.vue';
 import RandomBackground from '@/components/RandomBackground.vue';
+import QrCode from '@/components/QrCode.vue';
 </script>
 
 <template>
   <main>
     <RandomBackground />
-    <Welcome />
-    <Events />
+    <QrCode />
   </main>
 </template>
